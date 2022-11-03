@@ -1,0 +1,43 @@
+.prisustvo{
+    margin: 50px;
+}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+table, th,td{
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+table{
+    margin: 50px;
+}
+td{
+    height: 50px;
+}
+th{
+    height: 30px;
+}
+#zadnjakolona{
+    width: 300px;
+}
+#uskakolona{
+    width: 10px;
+}
+#prisutan{
+    background-color:lightgreen;
+}
+#odsutan{
+    background-color:lightcoral;
+}
+#nijeunesen{
+    background-color: white;
+}
+tr:first-of-type{
+    background: lightgray;
+}
+.tabela{
+    overflow-x:auto;
+}
