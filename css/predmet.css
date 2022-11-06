@@ -45,14 +45,6 @@ li div {
     display: inline-block;
 }
 
-#izborni {
-    background-color: powderblue;
-}
-
-#izbaceni {
-    background-color: gray;
-}
-
 .subject-grid {
     display: grid;
     gap: 10px;
@@ -83,6 +75,19 @@ h3 {
     border-radius: 5px;
     background-color: white;
 
+}
+.cardizbaceni {
+    border: 2px solid dimgray;
+    align-items: center;
+    border-radius: 5px;
+    background-color: gray;
+
+}
+.cardizborni{
+    border: 2px solid dimgray;
+    align-items: center;
+    border-radius: 5px;
+    background-color: powderblue;
 }
 
 .card_img {
