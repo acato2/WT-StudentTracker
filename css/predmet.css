@@ -1,82 +1,104 @@
-body{
+body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color:gainsboro;
-   
+    background-color: gainsboro;
+
 }
+
 html {
     scroll-behavior: smooth;
     scroll-padding: 230px;
-  }
+}
 
-#ri,#ee,#aie,#tk {
+#ri,
+#ee,
+#aie,
+#tk {
     float: left;
     padding: 10px;
-    margin:auto;
+    margin-left: 140px;
+    height: 100px;
 
 }
 
 .navbar {
     overflow: hidden;
     position: sticky;
-    display: flex;
     top: 0;
     width: 100%;
-    left: 0;
-    background-color:rebeccapurple;
-   
-}
-a{
-    color:lightgray;
+    background-color: rebeccapurple;
+    margin: auto;
 }
 
-h1{
+a {
+    color: lightgray;
+}
+
+h1 {
     text-align: center;
 }
-ul{
+
+ul {
     list-style-type: none;
 }
-li div{
+
+li div {
     display: inline-block;
 }
-#izborni{
+
+#izborni {
     background-color: powderblue;
 }
 
+#izbaceni {
+    background-color: gray;
+}
 
-
-
-
-.subject-grid{
+.subject-grid {
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(auto-fit,200px);
+    grid-template-columns: repeat(auto-fit, 200px);
     justify-content: center;
     margin-top: 70px;
-   
+
 }
-h2{
+
+h2 {
     text-align: center;
-    color:rgb(68, 69, 69);
+    color: rgb(68, 69, 69);
     font-size: 20px;
-   
-    
+
+
 }
-h3{
-    text-align:center;
+
+h3 {
+    text-align: center;
     font-size: 25px;
-    color:rebeccapurple;
+    color: rebeccapurple;
     text-decoration: underline;
 }
-.card{
+
+.card {
     border: 2px solid dimgray;
     align-items: center;
-    border-radius:5px;
+    border-radius: 5px;
     background-color: white;
 
 }
-.card_img{
+
+.card_img {
     width: 100px;
 }
 
+@media (max-width: 300px) {
+    .navbar {
+        position: inherit;
+    }
 
+    #ri,
+    #ee,
+    #aie,
+    #tk {
+       margin-left: 0px;
 
+    }
+}
