@@ -7,7 +7,7 @@ body{
 
 table, th,td{
     border-collapse: collapse;
-    border: 1px solid black;
+    border: 1.5px solid black;
     padding: 10px;
   }
 
@@ -23,21 +23,15 @@ th{
 #zadnjakolona{
     width: 300px;
 }
-#uskakolona{
+.uskakolona{
     width: 10px;
 }
-#prisutan{
+.prisutan{
     background-color:lightgreen;
 }
-#odsutan{
+.odsutan{
     background-color:lightcoral;
-}
-#nijeunesen{
-    background-color: white;
 }
 tr:first-of-type{
     background: lightgray;
-}
-.tabela{
-    overflow-x:auto;
 }
