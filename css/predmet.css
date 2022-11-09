@@ -1,6 +1,7 @@
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: gainsboro;
+ 
 
 }
 
@@ -9,24 +10,14 @@ html {
     scroll-padding: 230px;
 }
 
-#ri,
-#ee,
-#aie,
-#tk {
-    float: left;
-    padding: 10px;
-    margin-left: 140px;
-    height: 100px;
-
-}
-
 .navbar {
     overflow: hidden;
     position: sticky;
     top: 0;
     width: 100%;
     background-color: rebeccapurple;
-    margin: auto;
+    justify-content: center;
+    display:flex;
 }
 
 a {
@@ -41,8 +32,13 @@ ul {
     list-style-type: none;
 }
 
-li div {
+ul li {
     display: inline-block;
+}
+.red{
+    display: inline-table;
+    padding-right: 60px;
+    padding-bottom: 10px;
 }
 
 .subject-grid {
@@ -52,13 +48,13 @@ li div {
     justify-content: center;
     margin-top: 70px;
 
+
 }
 
 h2 {
     text-align: center;
     color: rgb(68, 69, 69);
     font-size: 20px;
-
 
 }
 
@@ -74,6 +70,7 @@ h3 {
     align-items: center;
     border-radius: 5px;
     background-color: white;
+    width: 200px;
 
 }
 .cardizbaceni {
@@ -81,6 +78,7 @@ h3 {
     align-items: center;
     border-radius: 5px;
     background-color: gray;
+    width: 200px;
 
 }
 .cardizborni{
@@ -88,22 +86,21 @@ h3 {
     align-items: center;
     border-radius: 5px;
     background-color: powderblue;
+    width: 200px;
 }
 
 .card_img {
     width: 100px;
 }
 
-@media (max-width: 300px) {
+
+@media (max-width: 65rem) {
     .navbar {
         position: inherit;
+        margin: auto;
     }
-
-    #ri,
-    #ee,
-    #aie,
-    #tk {
-       margin-left: 0px;
-
+    #lista>li{
+        display: block;
     }
 }
+
