@@ -1,5 +1,6 @@
 .prisustvo{
     margin: 50px;
+    margin-bottom: 10px;
 }
 body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -20,9 +21,6 @@ td{
 th{
     height: 30px;
 }
-#zadnjakolona{
-    width: 300px;
-}
 .uskakolona{
     width: 10px;
 }
@@ -32,6 +30,19 @@ th{
 .odsutan{
     background-color:lightcoral;
 }
+.nijeuneseno{
+    background-color: white;
+}
+.prazna{
+  
+    border-bottom: 1.5px solid black;
+    border-right: 0;
+    border-top: 0;
+    border-left: 0;
+}
 tr:first-of-type{
     background: lightgray;
+}
+.table{
+    overflow-x: auto !important;
 }
