@@ -236,13 +236,13 @@ let TabelaPrisustvo = function (divRef, podaci) {
     if (podaciIspravni == true) { //ako nisu validni ne prikaze dugmad
         //Zadatak 2
         var button = document.createElement("button");
-        button.style = "margin-left:50px; margin-right:10px; font-size: 25px;";
+        button.style = "margin-left:50px; margin-right:-35px; margin-bottom:5px; font-size: 25px;";
         button.onclick = prethodnaSedmica;
         button.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
         document.body.appendChild(button);
 
         var button2 = document.createElement("button");
-        button2.style = "font-size: 25px;";
+        button2.style = "margin-left:50px; font-size: 25px;";
         button2.onclick = sljedecaSedmica;
         button2.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
         document.body.appendChild(button2);
