@@ -85,13 +85,13 @@ let TabelaPrisustvo = function (divRef, podaci) {
             podaci.prisustva.forEach(p => {
                 sveSedmice.push(p.sedmica);
             })
-            for (let i = 1; i <= brojSedmica; i++) {
-                let br = 0;
-                sveSedmice.forEach(n => {
-                    if (n == i) br++;
-                })
-                if (br == 0) {
-                    podaciIspravni = false;
+            //izbaci duplikate
+            sveSedmice = sveSedmice.filter((element, index) => {
+                return sveSedmice.indexOf(element) === index;
+            });
+            for(let i = 0; i <sveSedmice.length-1 ; i++){
+                if(sveSedmice[i+1]-sveSedmice[i]!=1){
+                    podaciIspravni=false;
                     return;
                 }
             }
@@ -184,10 +184,10 @@ let TabelaPrisustvo = function (divRef, podaci) {
                 else {
                     if (nizSedmica.includes(week + 1)) {
                         let procenat = (element.predavanja + element.vjezbe) / (podaci.brojPredavanjaSedmicno + podaci.brojVjezbiSedmicno) * 100;
-                        html += `<td rowspan="2">${procenat}%</td>`
+                        html += `<td rowspan="2" width="30px">${procenat}%</td>`
                     }
                     else {
-                        html += `<td rowspan="2"></td>`
+                        html += `<td rowspan="2" width="30px"></td>`
                     }
                 }
             };
