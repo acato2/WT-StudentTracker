@@ -6,7 +6,7 @@ let TabelaPrisustvo = function (divRef, podaci) {
     let brojSedmica = 0;
     for (let sedmica of podaci.prisustva) {
         if (sedmica.sedmica > brojSedmica) {
-            brojSedmica = sedmica.sedmica; //u nasem slucaju 2 sedmice 
+            brojSedmica = sedmica.sedmica; 
         }
     }
     trenutnaSedmica = brojSedmica;
