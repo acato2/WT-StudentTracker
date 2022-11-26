@@ -80,8 +80,7 @@ let object ={
 
 //instanciranje
 let prisustvo = TabelaPrisustvo(div, object);
-/*
 //pozivanje metoda
 prisustvo.sljedecaSedmica();
 prisustvo.prethodnaSedmica();
-*/
+
