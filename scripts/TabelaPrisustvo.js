@@ -89,14 +89,15 @@ let TabelaPrisustvo = function (divRef, podaci) {
             sveSedmice = sveSedmice.filter((element, index) => {
                 return sveSedmice.indexOf(element) === index;
             });
+            //sortiraj
+            sveSedmice.sort(function (a, b) { return a - b });
             for(let i = 0; i <sveSedmice.length-1 ; i++){
                 if(sveSedmice[i+1]-sveSedmice[i]!=1){
                     podaciIspravni=false;
                     return;
                 }
             }
-
-
+        
             //ispisemo ime i indeks
             html += ` <tr>
            <td rowspan="2">${student.ime}</td>
