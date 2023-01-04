@@ -11,6 +11,9 @@ app.get('/predmet.html',function(req,res) {
 app.get('/prisustvo.html',function(req,res) {
     res.sendFile(path.join(__dirname+'/public/html/prisustvo.html'));
 });
+app.get('/prijava.html',function(req,res) {
+    res.sendFile(path.join(__dirname+'/public/html/prijava.html'));
+});
 
 
 app.listen(3000);
