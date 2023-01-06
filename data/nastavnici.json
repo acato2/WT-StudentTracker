@@ -1,0 +1,22 @@
+[
+    {
+        "nastavnik": {
+            "username": "acato1",
+            "password_hash": "$2b$10$JlNP3y46SH6BeDg0nWW19.BzC3vuLNzoLm4C0NND3bQVuEIEjZhTy"
+        },
+        "predmeti": [
+            "PREDMET1",
+            "PREDMET2",
+            "PREDMET3"
+        ]
+    },
+    {
+        "nastavnik": {
+            "username": "acato2",
+            "password_hash": "$2b$10$Brddgd8NaMLpUEOrB0vL8O.7/Ld0vqVZu/V100ZYRahZ7Aglj2b12"
+        },
+        "predmeti": [
+            "PREDMET1"
+        ]
+    }
+]

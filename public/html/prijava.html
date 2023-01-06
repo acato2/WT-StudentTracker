@@ -4,15 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel='stylesheet' type='text/css' media='screen' href="../css/prijava.css">
+    <title>Prijava</title>
+    
 </head>
-<body style="margin: 30px;">
-    <form action="/">
+<body >
+    <!--<form id="form">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username"><br><br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Submit">
-      </form> 
+        <button type="button" onclick="login()">Submit</button>
+      </form> -->
+      <div class="login-card">
+        <h1>Login</h1><br>
+      <form>
+        <input type="text" name="username" placeholder="Username" id="username">
+        <input type="password" name="password" placeholder="Password" id="password">
+        <button type="submit" class="login login-submit" id="submit" onclick="login()">Submit</button>
+      </form>
+    </div>
+
+      <script src='../scripts/poziviAjax.js' ></script>
+     <script src='../scripts/prijava.js' ></script>
+      
 </body>
 </html>
