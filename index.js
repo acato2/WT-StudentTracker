@@ -6,23 +6,17 @@ const fs = require('fs');
 const bcrypt = require('bcrypt');
 
 const app = express();
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, 'public/images')));
+app.use(express.static(path.join(__dirname, 'public/html')));
+app.use(express.static(path.join(__dirname, 'public/css')));
+app.use(express.static(path.join(__dirname, 'public/scripts')));
+
 app.use(bodyParser.json());
 app.use(session({
   secret:'sifra',
   resave:true,
   saveUninitialized:true
 }));
-
-app.get('/predmet.html',function(req,res) {
-  res.sendFile(path.join(__dirname+'/public/html/predmet.html'));
-});
-app.get('/prisustvo.html',function(req,res) {
-    res.sendFile(path.join(__dirname+'/public/html/prisustvo.html'));
-});
-app.get('/prijava.html',function(req,res) {
-    res.sendFile(path.join(__dirname+'/public/html/prijava.html'));
-});
 
 app.post('/login',function(req,res){
 
