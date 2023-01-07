@@ -9,20 +9,14 @@
     
 </head>
 <body >
-    <!--<form id="form">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username"><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"><br><br>
-        <button type="button" onclick="login()">Submit</button>
-      </form> -->
-      <div class="login-card">
-        <h1>Login</h1><br>
-      <form>
-        <input type="text" name="username" placeholder="Username" id="username">
-        <input type="password" name="password" placeholder="Password" id="password">
-        <button type="submit" class="login login-submit" id="submit" onclick="login()">Submit</button>
-      </form>
+  <div class="login-card">
+    <h1>Login</h1><br>
+    <form >
+        <input type="text" id="username" name="username" placeholder="Username">
+        <input type="password" id="password" name="password" placeholder="Password">
+        <p id="error"></p>
+        <button class="login login-submit" type="button" id="submit" onclick="login()">Submit</button>
+      </form> 
     </div>
 
       <script src='../scripts/poziviAjax.js' ></script>

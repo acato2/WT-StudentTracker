@@ -33,24 +33,40 @@ app.post('/login',function(req,res){
     //console.log(json);
     let uneseni_username = req.body.username;
     let uneseni_password = req.body.password;
-    
+
+    let postoji = false;
+    for(let i = 0 ; i < json.length ; i++){
+      let obj = json[i];
+      if(obj.nastavnik.username == uneseni_username){ 
+        postoji = true;
+      }
+
+    }
+    if(postoji == false){
+      res.json({"poruka":"Neuspješna prijava"});
+      return;
+    }
+
+    else{
     //provjerimo da li taj username postoji 
     for(let i = 0 ; i < json.length ; i++){
       let obj = json[i];
-        if(obj.nastavnik.username == uneseni_username){ //postoji sa tim usernameom
-          const isValid = bcrypt.compare(uneseni_password,obj.nastavnik.password_hash)
+        if(obj.nastavnik.username == uneseni_username){ 
+          bcrypt.compare(uneseni_password,obj.nastavnik.password_hash).then(function(isValid){
           
           if(isValid){
             req.session.username = uneseni_username;
             req.session.predmeti = obj.predmeti;
-            res.json({poruka:'Uspješna prijava'});
+            res.json({"poruka":"Uspješna prijava"});
           }
           else{
-            res.json({poruka:'Neuspješna prijava'});
+            res.json({"poruka":"Neuspješna prijava"});
           }
-        
-        }
+        });
+      }
+     
     }
+  }
   }
   else{
     //vec je neko logovan, sesija je otvorena

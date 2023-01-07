@@ -1,9 +1,26 @@
 function login(){
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
-    let fun = function(err,data){
-      //JSON.parse(data);
-      console.log(data);
-    };
-    PoziviAjax.postLogin(username,password,fun);
+ 
+    PoziviAjax.postLogin(username,password,function(err,data){
+      let jsonParsed = JSON.parse(data);
+      
+      console.log(jsonParsed.poruka);
+    
+      //nije doslo do errora
+      if(!err){
+        //provjeravamo da li je prijava uspjesna
+        if(jsonParsed.poruka == "Uspješna prijava"){
+          document.getElementById("error").innerHTML = "";
+        
+        }
+        else if (jsonParsed.poruka == "Neuspješna prijava"){
+          document.getElementById("error").innerHTML = "Wrong username or password.";
+        }
+
+
+      }
+   
+    });
+   
 }

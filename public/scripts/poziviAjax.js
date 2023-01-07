@@ -14,8 +14,7 @@ const PoziviAjax = (()=>{
         var ajax = new XMLHttpRequest();
         ajax.onreadystatechange = function(){ //osluskujem sta vraca server
             if(ajax.readyState == 4 && ajax.status == 200){
-                var jsonRez = JSON.parse(ajax.responseText);
-                fnCallback(null,jsonRez.poruka); 
+                fnCallback(null,ajax.responseText); 
             }
             else if(ajax.readyState == 4){
                fnCallback(ajax.statusText,null);
