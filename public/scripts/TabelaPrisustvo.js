@@ -209,12 +209,27 @@ let TabelaPrisustvo = function (divRef, podaci) {
 
             divRef.innerHTML = html;
         }
+      
+        if (podaciIspravni == true) { //ako nisu validni ne prikaze dugmad
+            //Zadatak 2
+            var button = document.createElement("button");
+            button.style = "margin-left:50px; margin-right:-35px; margin-bottom:5px; font-size: 25px;";
+            button.onclick = prethodnaSedmica;
+            button.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
+            divRef.appendChild(button);
+    
+            var button2 = document.createElement("button");
+            button2.style = "margin-left:50px; font-size: 25px;";
+            button2.onclick = sljedecaSedmica;
+            button2.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
+            divRef.appendChild(button2);
+        }
     }
 
-    //Zadatak 2
+      //Zadatak 2
 
     //implementacija metoda
-    let sljedecaSedmica = function () {
+    function sljedecaSedmica() {
         trenutnaSedmica++;
         if (trenutnaSedmica <= brojSedmica) {
             iscrtajTabelu(trenutnaSedmica)
@@ -225,7 +240,7 @@ let TabelaPrisustvo = function (divRef, podaci) {
 
     }
 
-    let prethodnaSedmica = function () {
+    function prethodnaSedmica() {
         trenutnaSedmica--;
         if (trenutnaSedmica >= 1) {
             iscrtajTabelu(trenutnaSedmica);
@@ -234,23 +249,6 @@ let TabelaPrisustvo = function (divRef, podaci) {
             trenutnaSedmica++;
         }
     }
-    if (podaciIspravni == true) { //ako nisu validni ne prikaze dugmad
-        //Zadatak 2
-        var button = document.createElement("button");
-        button.style = "margin-left:50px; margin-right:-35px; margin-bottom:5px; font-size: 25px;";
-        button.onclick = prethodnaSedmica;
-        button.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
-        document.body.appendChild(button);
-
-        var button2 = document.createElement("button");
-        button2.style = "margin-left:50px; font-size: 25px;";
-        button2.onclick = sljedecaSedmica;
-        button2.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
-        document.body.appendChild(button2);
-    }
-
-
-
     return {
         sljedecaSedmica: sljedecaSedmica,
         prethodnaSedmica: prethodnaSedmica

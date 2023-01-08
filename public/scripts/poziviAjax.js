@@ -4,7 +4,17 @@ const PoziviAjax = (()=>{
     // svaki callback kao parametre ima error i data, error je null ako je status 200 i data je tijelo odgovora
     // ako postoji greška poruka se prosljeđuje u error parametar callback-a, a data je tada null
     function impl_getPredmet(naziv,fnCallback){
-
+        var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function () { //osluskujem sta vraca server
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                fnCallback(null,ajax.responseText);
+            }
+            else if (ajax.readyState == 4) {
+                fnCallback(ajax.statusText,null);
+            }
+        }
+        ajax.open("GET", `http://localhost:3000/predmet/${naziv}`, true);
+        ajax.send();
     }
     // vraća listu predmeta za loginovanog nastavnika ili grešku da nastavnik nije loginovan
     function impl_getPredmeti(fnCallback) {

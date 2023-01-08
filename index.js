@@ -90,6 +90,19 @@ app.get('/predmeti',function(req,res) {
   }
  });
 
+ app.get('/predmet/:NAZIV',function(req,res){
+  //provjeravamo da li u prisustva.json ima taj predmet i vracamo prisustva
+  let fileText = fs.readFileSync('data/prisustva.json');  
+  let json = JSON.parse(fileText);
+
+  for(let i = 0 ; i < json.length ; i++){
+    let obj = json[i];
+    if(obj.predmet == req.params.NAZIV){
+      res.json(obj);
+    }
+  }
+ });
+
 
 
 
