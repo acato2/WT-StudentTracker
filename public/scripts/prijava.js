@@ -12,6 +12,8 @@ function login(){
         //provjeravamo da li je prijava uspjesna
         if(jsonParsed.poruka == "Uspješna prijava"){
           document.getElementById("error").innerHTML = "";
+
+          window.location.href = "http://localhost:3000/predmeti.html";
         
         }
         else if (jsonParsed.poruka == "Neuspješna prijava"){

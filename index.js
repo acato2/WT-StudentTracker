@@ -68,6 +68,28 @@ app.post('/login',function(req,res){
 
 });
 
+app.get('/predmeti',function(req,res) {
+  if(req.session.username != null){  //ako je loginovan
+    res.json(req.session.predmeti);
+   }
+   else{
+     res.json({greska:"Nastavnik nije loginovan"});
+   }
+ });
+ 
+
+ app.post('/logout',function(req,res){
+  //brise informacije iz sesije
+  if(req.session.username != null){
+  req.session.username = null;
+  req.session.predmeti = null;
+  res.json({poruka:"Uspješno odjavljen korisnik"})
+  }
+  else{
+    res.json({poruka:"Neuspješno odjavljen korisnik"})
+  }
+ });
+
 
 
 

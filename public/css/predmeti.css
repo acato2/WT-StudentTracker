@@ -1,0 +1,41 @@
+#topnav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: Black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    margin: 5px;
+ }
+ 
+ .nav-link {
+    display: inline-block;
+    width: 100px;
+    height: 55px;
+    color: White;
+    text-align: center;
+    line-height: 55px;
+    text-decoration: none;
+    
+ }
+ .nav-link:hover {
+    border: 0px;
+    text-shadow: 0 1px rgba(0,0,0,0.3);
+    background-color: RoyalBlue;
+  }
+ 
+ #naslov {
+    width: 120px;
+    background-color: RoyalBlue;
+    font-weight: bold;
+ }
+ 
+ #logout {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: black;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+ }

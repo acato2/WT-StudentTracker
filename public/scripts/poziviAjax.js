@@ -7,8 +7,20 @@ const PoziviAjax = (()=>{
 
     }
     // vraća listu predmeta za loginovanog nastavnika ili grešku da nastavnik nije loginovan
-    function impl_getPredmeti(fnCallback){
-
+    function impl_getPredmeti(fnCallback) {
+        var ajax = new XMLHttpRequest();
+        
+        ajax.onreadystatechange = function () { //osluskujem sta vraca server
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                fnCallback(null,ajax.responseText);
+            }
+            else if (ajax.readyState == 4) {
+                fnCallback(ajax.statusText,null);
+            }
+        }
+        ajax.open("GET", "http://localhost:3000/predmeti", true);
+        ajax.send();
+    
     }
     function impl_postLogin(username,password,fnCallback){
         var ajax = new XMLHttpRequest();
@@ -26,6 +38,18 @@ const PoziviAjax = (()=>{
     }
 
     function impl_postLogout(fnCallback){
+        var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function(){ //osluskujem sta vraca server
+            if(ajax.readyState == 4 && ajax.status == 200){
+                fnCallback(null,ajax.responseText); 
+            }
+            else if(ajax.readyState == 4){
+               fnCallback(ajax.statusText,null);
+            }
+        }
+        ajax.open("POST","http://localhost:3000/logout",true);
+        ajax.setRequestHeader("Content-Type","application/json");
+        ajax.send();
 
     }
     //prisustvo ima oblik {sedmica:N,predavanja:P,vjezbe:V}
