@@ -103,6 +103,52 @@ app.get('/predmeti',function(req,res) {
   }
  });
 
+ app.post('/prisustvo/predmet/:NAZIV/student/:index',function(req,res){
+  let fileText = fs.readFileSync('data/prisustva.json');  
+  let json = JSON.parse(fileText);
+  //odgovor je cijeli json sa azuriranim prisustvom
+
+  let imaPrisustvo = false;
+  for(let i = 0 ; i < json.length ; i++){
+    let obj = json[i];
+    if(obj.predmet == req.params.NAZIV){  //znaci da smo nasli prisustvo za taj predmet
+      //prolazimo kroz prisustva
+      for(let j = 0 ; j<obj.prisustva.length ; j++){
+        let obj2 = obj.prisustva[j];
+        //ako su u pitanju crvena i zelena celija, odnosno ako prisustvo vec postoji
+        if(obj2.sedmica == req.body.sedmica && obj2.index == req.params.index){
+          imaPrisustvo = true;
+          //mijenjamo
+          obj2.predavanja = req.body.predavanja;
+          obj2.vjezbe = req.body.vjezbe;
+
+          fs.writeFile('data/prisustva.json', JSON.stringify(json), (err) => {
+            if (err) throw err;    
+        });
+        res.json(json);
+        }
+
+      }
+      if(imaPrisustvo==false){
+        //dodajemo novi objekat
+        let novi = {
+          "sedmica": req.body.sedmica,
+          "predavanja": req.body.predavanja,
+          "vjezbe": req.body.vjezbe,
+          "index": parseInt(req.params.index)
+        };
+        obj.prisustva.push(novi);
+        fs.writeFile('data/prisustva.json', JSON.stringify(json), (err) => {
+          if (err) throw err;    
+        });
+        res.json(json);
+
+      }
+    }
+  }
+
+ });
+
 
 
 

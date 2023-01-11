@@ -24,13 +24,13 @@ th{
 .uskakolona{
     width: 10px;
 }
-.prisutan{
+.prisutanP,.prisutanV{
     background-color:lightgreen;
 }
-.odsutan{
+.odsutanP,.odsutanV{
     background-color:lightcoral;
 }
-.nijeuneseno{
+.nijeunesenoP,.nijeunesenoV{
     background-color: white;
 }
 .prazna{

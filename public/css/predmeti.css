@@ -23,6 +23,7 @@
     border: 0px;
     text-shadow: 0 1px rgba(0,0,0,0.3);
     background-color: RoyalBlue;
+    cursor: pointer;
   }
  
  #naslov {

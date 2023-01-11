@@ -154,28 +154,28 @@ let TabelaPrisustvo = function (divRef, podaci) {
                     for (let i = 0; i < podaci.brojPredavanjaSedmicno; i++) {
                         if (nizSedmica.includes(week + 1)) {
                             if (i < element.predavanja) {
-                                pomocniHtml += `<td class="prisutan"></td>`
+                                pomocniHtml += `<td class="prisutanP"></td>`
                             }
                             else {
-                                pomocniHtml += `<td class="odsutan"></td>`
+                                pomocniHtml += `<td class="odsutanP"></td>`
                             }
                         }
                         else {
-                            pomocniHtml += `<td class="nijeuneseno"></td>`
+                            pomocniHtml += `<td class="nijeunesenoP"></td>`
                         }
 
                     }
                     for (let i = 0; i < podaci.brojVjezbiSedmicno; i++) {
                         if (nizSedmica.includes(week + 1)) {
                             if (i < element.vjezbe) {
-                                pomocniHtml += `<td class="prisutan"></td>`
+                                pomocniHtml += `<td class="prisutanV"></td>`
                             }
                             else {
-                                pomocniHtml += `<td class="odsutan"></td>`
+                                pomocniHtml += `<td class="odsutanV"></td>`
                             }
                         }
                         else {
-                            pomocniHtml += `<td class="nijeuneseno"></td>`
+                            pomocniHtml += `<td class="nijeunesenoV"></td>`
                         }
 
                     }

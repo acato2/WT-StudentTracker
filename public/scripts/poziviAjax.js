@@ -64,6 +64,18 @@ const PoziviAjax = (()=>{
     }
     //prisustvo ima oblik {sedmica:N,predavanja:P,vjezbe:V}
     function impl_postPrisustvo(naziv,index,prisustvo,fnCallback){
+        var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function(){ //osluskujem sta vraca server
+            if(ajax.readyState == 4 && ajax.status == 200){
+                fnCallback(null,ajax.responseText); 
+            }
+            else if(ajax.readyState == 4){
+               fnCallback(ajax.statusText,null);
+            }
+        }
+        ajax.open("POST",`http://localhost:3000/prisustvo/predmet/${naziv}/student/${index}`,true);
+        ajax.setRequestHeader("Content-Type","application/json");
+        ajax.send(JSON.stringify(prisustvo));
 
     }
 
