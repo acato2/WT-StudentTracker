@@ -4,8 +4,6 @@ function login(){
  
     PoziviAjax.postLogin(username,password,function(err,data){
       let jsonParsed = JSON.parse(data);
-      
-      console.log(jsonParsed.poruka);
     
       //nije doslo do errora
       if(!err){

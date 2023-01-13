@@ -24,7 +24,6 @@ app.post('/login',function(req,res){
     //provjeravamo da li postoji unutar fajla nastavnici.json
     let fileText = fs.readFileSync('data/nastavnici.json');  
     let json = JSON.parse(fileText);
-    //console.log(json);
     let uneseni_username = req.body.username;
     let uneseni_password = req.body.password;
 

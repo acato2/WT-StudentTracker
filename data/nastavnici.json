@@ -1,8 +1,8 @@
 [
     {
         "nastavnik": {
-            "username": "acato1",
-            "password_hash": "$2b$10$JlNP3y46SH6BeDg0nWW19.BzC3vuLNzoLm4C0NND3bQVuEIEjZhTy"
+            "username": "USERNAME",
+            "password_hash": "$2b$10$mBxmXVMvJ6tVBzACY37Ei.3p7ttYOQjHjWmBUGW64D0J53TFoEF6u"
         },
         "predmeti": [
             "PREDMET1",
@@ -12,8 +12,8 @@
     },
     {
         "nastavnik": {
-            "username": "acato2",
-            "password_hash": "$2b$10$Brddgd8NaMLpUEOrB0vL8O.7/Ld0vqVZu/V100ZYRahZ7Aglj2b12"
+            "username": "USERNAME2",
+            "password_hash": "$2b$10$60vLgTAiY/eA2.y8A2bAvOY6FjjmKJ.QSoVq2.ID4kN56fnxVGh9u"
         },
         "predmeti": [
             "PREDMET1"
