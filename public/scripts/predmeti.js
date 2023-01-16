@@ -32,6 +32,7 @@ let nazivPredmeta;
 
 if (el) {
     document.getElementById("topnav").addEventListener("click", function (event) {
+        if(event.target.tagName !="BUTTON" && event.target.text !="PREDMETI"){
         PoziviAjax.getPredmet(event.target.text, function (err, data) {
             let jsonParsed = JSON.parse(data);
             nazivPredmeta = event.target.text;
@@ -44,7 +45,9 @@ if (el) {
             }
 
         });
+        }
     });
+
 }
 let pris = document.getElementById("prisustvo");
 if (pris) {
