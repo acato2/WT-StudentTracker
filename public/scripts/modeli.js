@@ -28,6 +28,14 @@ module.exports = (baza) => {
         timestamps: false
     });
 
+    baza.NastavnikPredmet = baza.define('nastavnik_predmet',{
+        nastavnik_id: Sequelize.INTEGER,
+        predmet_id: Sequelize.INTEGER
+    }, {
+        tableName: 'nastavnik_predmet',
+        timestamps: false
+    });
+
     baza.Student = baza.define('Student',{
         index: {
             type: Sequelize.INTEGER,
@@ -38,7 +46,13 @@ module.exports = (baza) => {
         tableName: 'student',
         timestamps: false
     });
-
+    baza.StudentPredmet = baza.define('student_predmet',{
+        student_id: Sequelize.INTEGER,
+        predmet_id: Sequelize.INTEGER
+    }, {
+        tableName: 'student_predmet',
+        timestamps: false
+    });
     baza.Prisustvo = baza.define('Prisustvo',{
         id: {
             type: Sequelize.INTEGER,

@@ -7,7 +7,8 @@ const bcrypt = require('bcrypt');
 
 const app = express();
 const baza = require("./public/scripts/baza.js");
-baza.sync({ force: false });
+//baza.sync({ force: false });
+//manuelno pokretanje priprema.js fajla za kreiranje početnih podataka
 
 app.use(express.static(path.join(__dirname, 'public/images')));
 app.use(express.static(path.join(__dirname, 'public/html')));
