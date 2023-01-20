@@ -107,26 +107,15 @@ if (pris) {
             let sedm = trenutnaSedmica;
 
             PoziviAjax.postPrisustvo(nazivPredmeta,brojIndexa,{sedmica:trenutnaSedmica,predavanja:brojPredavanja,vjezbe:brojVjezbi},function(err,data){
-              //dobili smo citav json
-              //hocemo samo objekat za taj predmet
-                let jsonParsed = JSON.parse(data);
-                let obj;
-                
-                for(let i = 0 ;i<jsonParsed.length;i++){
-                    if(jsonParsed[i].predmet == nazivPredmeta){
-                        obj = jsonParsed[i];
-
-                    }
-                }
+           
+                let obj = JSON.parse(data);
                 jsonData=obj;
-                if(!err){
-                let div = document.getElementById("prisustvo");
-                let prisustvo = TabelaPrisustvo(div, obj);
-                for(let i=trenutnaSedmica;i>sedm;i--){
-                    prisustvo.prethodnaSedmica();
-                }
-                
-              
+                if (!err) {
+                    let div = document.getElementById("prisustvo");
+                    let prisustvo = TabelaPrisustvo(div, obj);
+                    for (let i = trenutnaSedmica; i > sedm; i--) {
+                        prisustvo.prethodnaSedmica();
+                    }
                 }
             });
 
