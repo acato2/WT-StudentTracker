@@ -200,58 +200,48 @@ app.post('/prisustvo/predmet/:NAZIV/student/:index', async function (req, res) {
     });
 
   }
-  let sviPredmeti = await baza.Predmet.findAll({});
-  let povratniJson = [];
-
   //formiramo odgovor
-  for (let i = 0; i < sviPredmeti.length; i++) {
-    //trazimo studente za taj predmet
-    let studenti = await baza.Student.findAll({
-      include: [{
-        model: baza.Predmet,
-        where: {
-          predmet: sviPredmeti[i].predmet
-        }
-      }]
-    });
-    //pravim json
-    let studentiJson = [];
-    for (let i = 0; i < studenti.length; i++) {
-      let obj = {
-        ime: studenti[i].ime,
-        index: studenti[i].index
-      }
-      studentiJson.push(obj);
-    }
-    //uzimamo sva prisustva za taj predmet
-    let prisustva = await baza.Prisustvo.findAll({
+
+  //trazimo studente za taj predmet
+  let studenti = await baza.Student.findAll({
+    include: [{
+      model: baza.Predmet,
       where: {
-        predmet_id: sviPredmeti[i].id
+        predmet: req.params.NAZIV
       }
-    });
-    //pravim json
-    let prisustvaJson = [];
-    for (let i = 0; i < prisustva.length; i++) {
-      let obj = {
-        sedmica: prisustva[i].sedmica,
-        predavanja: prisustva[i].predavanja,
-        vjezbe: prisustva[i].vjezbe,
-        index: prisustva[i].index
-      }
-      prisustvaJson.push(obj);
+    }]
+  });
+  //pravim json
+  let studentiJson = [];
+  for (let i = 0; i < studenti.length; i++) {
+    let obj = {
+      ime: studenti[i].ime,
+      index: studenti[i].index
     }
-    //pravimo kompletan objekat
-    let object = {
-      studenti: studentiJson,
-      prisustva: prisustvaJson,
-      predmet: sviPredmeti[i].predmet,
-      brojPredavanjaSedmicno: sviPredmeti[i].brojPredavanjaSedmicno,
-      brojVjezbiSedmicno: sviPredmeti[i].brojVjezbiSedmicno
-    };
-    //sve stavljamo u niz
-    povratniJson.push(object);
+    studentiJson.push(obj);
   }
-  res.json(povratniJson);
+
+  //pravim json za vec dobivena prisustva
+  let prisustvaJson = [];
+  for (let i = 0; i < prisustva.length; i++) {
+    let obj = {
+      sedmica: prisustva[i].sedmica,
+      predavanja: prisustva[i].predavanja,
+      vjezbe: prisustva[i].vjezbe,
+      index: prisustva[i].index
+    }
+    prisustvaJson.push(obj);
+  }
+
+  //pravimo kompletan objekat
+  let object = {
+    studenti: studentiJson,
+    prisustva: prisustvaJson,
+    predmet: predmet.predmet,
+    brojPredavanjaSedmicno: predmet.brojPredavanjaSedmicno,
+    brojVjezbiSedmicno: predmet.brojVjezbiSedmicno
+  };
+  res.json(object);
 
 });
 
