@@ -220,15 +220,20 @@ app.post('/prisustvo/predmet/:NAZIV/student/:index', async function (req, res) {
     }
     studentiJson.push(obj);
   }
-
-  //pravim json za vec dobivena prisustva
+  //uzimamo prisustva za taj predmet
+  let prisustva2 = await baza.Prisustvo.findAll({
+    where: {
+      predmet_id: predmet.id
+    }
+  });
+  //pravim json 
   let prisustvaJson = [];
-  for (let i = 0; i < prisustva.length; i++) {
+  for (let i = 0; i < prisustva2.length; i++) {
     let obj = {
-      sedmica: prisustva[i].sedmica,
-      predavanja: prisustva[i].predavanja,
-      vjezbe: prisustva[i].vjezbe,
-      index: prisustva[i].index
+      sedmica: prisustva2[i].sedmica,
+      predavanja: prisustva2[i].predavanja,
+      vjezbe: prisustva2[i].vjezbe,
+      index: prisustva2[i].index
     }
     prisustvaJson.push(obj);
   }
