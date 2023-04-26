@@ -2,6 +2,8 @@
 
 StudentTracker is a web application designed for professors to easily track attendance of their students. 
 
+The application was developed as part of the course "Web Technologies".
+
 
 ## Features
 
