@@ -16,10 +16,12 @@ StudentTracker is a web application designed for professors to easily track atte
 ## Navigation
 
 - Login
-![](https://github.com/acato2/WT-StudentTracker/videos/login.gif)
+
+![](https://github.com/acato2/WT-StudentTracker/blob/master/videos/login.gif)
 
 - Home page
-![](https://github.com/acato2/WT-StudentTracker/videos/homepage.gif)
+
+![](https://github.com/acato2/WT-StudentTracker/blob/master/videos/homepage.gif)
 
 
 
@@ -57,5 +59,6 @@ As part of this project, there is a simple HTML application that displays all th
 
 The display of all courses is facilitated through a navigation bar, with elective and dropped courses highlighted in different colors.
 
-![](https://github.com/acato2/WT-StudentTracker/videos/subjects.gif)
+
+![](https://github.com/acato2/WT-StudentTracker/blob/master/videos/subjects.gif)
 
